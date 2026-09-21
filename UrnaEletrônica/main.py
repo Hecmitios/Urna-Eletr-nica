@@ -10,6 +10,7 @@ candidatoNulo = Candidatos('NULO', 'NENHUM', 00, 0)
 
 tabelaGeral(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo)
 
+
 Candidatos.votar(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo)
 
 

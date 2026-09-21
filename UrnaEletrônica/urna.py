@@ -1,11 +1,11 @@
 from cores import *
 class Candidatos:
 
-    def __init__(self, nome, partido, numero, numeroVotos,):
+    def __init__(self, nome, partido, numero, quantVotos,):
         self.nome = nome
         self.partido = partido
         self.numero = numero
-        self.numeroVotos = numeroVotos
+        self.quantVotos = quantVotos
     
     def exibirCandidato(self):
         return ' {}  |   {}   |  {} '.format(self.nome, self.partido, self.numero)
@@ -25,28 +25,44 @@ class Candidatos:
         candidato5,
         candidatoNulo
     ]
+        for i in range (5):
+            voto = int(input('Vote: '))
 
-        voto = int(input(''))
+            for candidato in listaCandidatos:
+                if voto == candidato.numero:
+                    print(f'Confirma seu voto no(a) candidato(a) {candidato.nome}?')
+                    print(f'{verde}s{reset} {amarelo}OU{reset} {vermelho}n{reset}')
 
-        for candidato in listaCandidatos:
-            if voto == candidato.numero:
-                print('Confirma?')
-                print(f'{verde}s{reset} {amarelo}OU{reset} {vermelho}n{reset}')
+                    confirmar = input('').lower()
 
-                confirmar = input('').lower()
+                    if confirmar == 's':
+                        candidato.quantVotos += 1
+                        print(f'{verde}Voto confirmado!{reset}')
+                        espaço()
+                    elif confirmar == 'n':
+                        print(f'{vermelho}Voto cancelado{reset}.')
+                        espaço()
+                    else:
+                        print(f'{vermelho}Voto inválido{reset}')
+                        espaço()
 
-                if confirmar == 's':
-                    candidato.numeroVotos += 1
-                    print(f'{verde}Voto {negrito}confirmado!{reset}{reset}')
+        listaQuantVotos = [
 
-                elif confirmar == 'n':
-                    print(f'{vermelho}Voto {negrito}cancelado{reset}{reset}.')
-
-                else:
-                    print(f'{vermelho}Voto {negrito}inválido{reset}{reset}')
+        candidato1.quantVotos,
+        candidato2.quantVotos,
+        candidato3.quantVotos,
+        candidato4.quantVotos,
+        candidato5.quantVotos,
+        candidatoNulo.quantVotos
+    ]
+        maisVotos = max(listaQuantVotos)
+        print(maisVotos)
 
         
-        
+def espaço():
+    print('')
+    print('------------------------')
+    print('')
 
 def tabelaGeral( candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo ):
         print(' Nome   Partido  Número')
