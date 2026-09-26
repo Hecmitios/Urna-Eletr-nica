@@ -17,11 +17,11 @@ listaCandidatos = [
                                 ]
 
 
-tabelaGeral(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo)
-
-
-Urna.votar(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo)
+espaço(vermelho)
+Urna.apresentacao(listaCandidatos)
+Urna.votar(listaCandidatos)
 Urna.apurar(listaCandidatos)
+Urna.segundoTurno(Urna)
 
 
 

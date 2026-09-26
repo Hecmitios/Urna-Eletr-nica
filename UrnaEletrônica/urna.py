@@ -7,27 +7,17 @@ class Urna:
             Candidato.partido = partido
             Candidato.numero = numero
             Candidato.quantVotos = quantVotos
+
+    def apresentacao(listaCandidatos):
+
+        print(f'Muito bem, eleitor, agora você deve votar, pois nesse país, {vermelho}todos{reset} são obrigados a tal {pensativo}')
+        espaço(negrito)
+        tabelaGeral(listaCandidatos) #tabela com os candidatos e numeros
+        espaço(negrito)
     
-    def votar(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo):
+    def votar(listaCandidatos):
 
-
-        listaCandidatos = [
-                                candidato1,
-                                candidato2,
-                                candidato3,
-                                candidato4,
-                                candidato5,
-                                candidatoNulo
-                                ]
-        
-        print(f'Muito bem, eleitor, agora você deve votar, pois nesse país, {vermelho}todos{reset} são obrigados a tal')
-        print()
-        tabelaGeral(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo)
-        print()
-        print(f'Digite o número de um candidato')
-
-    
-        for i in range (5):
+        for i in range (5): #Votação de facto
             voto = int(input('Vote: '))
     
             for candidato in listaCandidatos:
@@ -42,36 +32,49 @@ class Urna:
                     if confirmar == 's':
                         candidato.quantVotos += 1
                         print(f'{verde}Voto confirmado!{reset}')
-                        espaço()
+                        sound = playsound("C:/Users/Grizenti/Downloads/pirirililili (mp3cut.net).mp3", block=False)
+                        espaço(negrito)
+                        
                     elif confirmar == 'n':
                         print(f'{vermelho}Voto cancelado{reset}.')
-                        espaço()
+                        espaço(negrito)
                     break
             else:
                 
                 print(f'{vermelho}Voto inválido{reset}')
-                espaço()
+                espaço(branco)
+
     def apurar(listaCandidatos):
-    
-    
+            global vencedores
+            vencedores = []
             maisVotos = max(candidato.quantVotos for candidato in listaCandidatos)
+
             for candidato in listaCandidatos:
                 if candidato.quantVotos == maisVotos:
-                    print(f'O(a) candidato (a) {candidato.nome} {verde}venceu{reset} a eleição com {verde}{candidato.quantVotos}{verde} votos!')               
+                    vencedores.append(candidato)
+            if len(vencedores) == 1:
+                vencedor = vencedores[0]
+                print(f'O(a) candidato(a) {vencedor.nome} {verde}venceu{reset} a eleição com {verde}{vencedor.quantVotos}{reset} votos ao todo!')  
+            else:
+                
+                print(f'Deu {cinza}empate!{reset}{surpreso}')
+                print()
+                global empate 
+                empate = True
     
-    
+    def segundoTurno(self):
+        if empate == True:
             
-def espaço():
-        print('')
-        print('------------------------')
-        print('')
+            print('Então vamos começar esse segundo turno!')
+            print('Vote nos candidatos ainda em disputa. São eles:')
+            espaço(negrito)
+            tabelaGeral(vencedores)
+            espaço(negrito)
 
-def tabelaGeral(candidato1, candidato2, candidato3, candidato4, candidato5, candidatoNulo ):
-            
-            print(' Nome   Partido  Número')
-            print(candidato1.exibirCandidato())
-            print(candidato2.exibirCandidato())
-            print(candidato3.exibirCandidato())
-            print(candidato4.exibirCandidato())
-            print(candidato5.exibirCandidato())
-            print(candidatoNulo.exibirCandidato())
+            print(f'{vermelho}Agora vamos decidir isso.{reset}')
+
+            self.votar(vencedores)
+            self.apurar(vencedores)
+
+
+                    

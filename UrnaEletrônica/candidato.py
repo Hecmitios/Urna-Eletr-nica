@@ -1,4 +1,4 @@
-from cores import *
+from outros import *
 class Candidato:
 
     def __init__(self, nome, partido, numero, quantVotos,):
@@ -8,4 +8,3 @@ class Candidato:
         self.quantVotos = quantVotos
     def exibirCandidato(self):
         return ' {}  |   {}   |  {} '.format(self.nome, self.partido, self.numero)
-    
