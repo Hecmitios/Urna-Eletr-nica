@@ -1,75 +1,57 @@
-from PyQt6 import uic, QtWidgets
-from PyQt6.QtCore import QTimer
-from urna import *
-from candidato import *
-from playsound3 import playsound
-import sys
-empate = bool
+from urna import * 
 
 
+class JanelaUrna(QtWidgets.QMainWindow):
 
-def botaonumero(numero):
+    def __init__(self):
+        super().__init__()
+        
+        uic.loadUi("tse.ui", self)
+        self.setWindowTitle("Urna")
+        self.setWindowIcon(QIcon("imagens/urnalogo.png"))
 
-    numeroAtual = janela.numeroPrint.text()
+        
+        self.bt1.clicked.connect(lambda: self.botaonumero(1))
+        self.bt2.clicked.connect(lambda: self.botaonumero(2))
+        self.bt3.clicked.connect(lambda: self.botaonumero(3))
+        self.bt4.clicked.connect(lambda: self.botaonumero(4))
+        self.bt5.clicked.connect(lambda: self.botaonumero(5))
+        self.bt6.clicked.connect(lambda: self.botaonumero(6))
+        self.bt7.clicked.connect(lambda: self.botaonumero(7))
+        self.bt8.clicked.connect(lambda: self.botaonumero(8))
+        self.bt9.clicked.connect(lambda: self.botaonumero(9))
+        self.bt0.clicked.connect(lambda: self.botaonumero(0))
+        self.btCorrige.clicked.connect(self.botaocorrige)
 
-    if len(numeroAtual) < 2:
-        janela.numeroPrint.setText(f"{numeroAtual}{numero}") 
+        
+        self.btConfirma.clicked.connect(lambda: self.botaoconfirma(listaCandidatos))
+        self.btEncerrar.clicked.connect(lambda: self.botaoencerrar(listaCandidatos))
+        
 
-    numeroAtual = janela.numeroPrint.text()
 
-def botaocorrige():
     
-    numeroAtual = janela.numeroPrint.text()
-    novoNumero = numeroAtual[:-1]
-    janela.numeroPrint.setText(f"{novoNumero}")
+    def botaonumero(self, numero): 
+        numeroAtual = self.numeroPrint.text()
 
-def botaoconfirma():
+        if len(numeroAtual) < 2:
+            self.numeroPrint.setText(f"{numeroAtual}{numero}") 
 
-    for candidato in listaCandidatos:
-        
-        if int(janela.numeroPrint.text()) == candidato.numero:
-            candidato.quantVotos +=1
-            sound = playsound("C:/Users/Grizenti/Downloads/pirirililili (mp3cut.net).mp3", block=False)
+    def botaocorrige(self):
+        numeroAtual = self.numeroPrint.text()
+        novoNumero = numeroAtual[:-1]
+        self.numeroPrint.setText(f"{novoNumero}")
 
-            break #dói no coração lembrar daqueles que se foram 
+    def botaoconfirma(self, listadomomento):
+        Urna.votar(self, listadomomento) 
 
-    else: 
-        textoinvalido = janela.mensagemVoto.setText("Voto Inválido! 😑")
-        
-def botaoencerrar():
-    global vencedores
-    vencedores = []
+    def botaoencerrar(self, listadomomento):
+        Urna.apurar(self, listadomomento)
 
-    maisVotos = max(candidato.quantVotos for candidato in listaCandidatos)
-        
-    for candidato in listaCandidatos:
-        if candidato.quantVotos == maisVotos:
-            vencedores.append(candidato)
-        if len(vencedores) == 1:
-            vencedor = vencedores[0]
-            janela.mensagemVoto.setText(f'O(a) vencedor(a) da eleição foi o(a) candidato(a) {vencedor.nome} com {vencedor.quantVotos} votos!')
-            
-    
+        global encerramento
+        encerramento = True
 
-
-app = QtWidgets.QApplication([])
-
-janela = uic.loadUi("tse.ui") # tela do qtDesign
-
-
-janela.bt1.clicked.connect(lambda: botaonumero(1))#///botões com numeros
-janela.bt2.clicked.connect(lambda: botaonumero(2))
-janela.bt3.clicked.connect(lambda: botaonumero(3))
-janela.bt4.clicked.connect(lambda: botaonumero(4))
-janela.bt5.clicked.connect(lambda: botaonumero(5))
-janela.bt6.clicked.connect(lambda: botaonumero(6))
-janela.bt7.clicked.connect(lambda: botaonumero(7))
-janela.bt8.clicked.connect(lambda: botaonumero(8))
-janela.bt9.clicked.connect(lambda: botaonumero(9))
-janela.bt0.clicked.connect(lambda: botaonumero(0))#\\\
-janela.btCorrige.clicked.connect(botaocorrige)
-janela.btConfirma.clicked.connect(botaoconfirma)
-janela.btEncerrar.clicked.connect(botaoencerrar)
-
-janela.show()
-app.exec()
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
+    janela_principal = JanelaUrna()
+    janela_principal.show()
+    sys.exit(app.exec())

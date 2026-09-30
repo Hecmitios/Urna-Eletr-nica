@@ -1,20 +1,18 @@
-class Candidato:
+class Candidato: 
 
-    def __init__(self, nome, partido, numero, quantVotos,):
+    def __init__(self, nome, partido, numero, quantVotos, imagem):
         self.nome = nome
         self.partido = partido
         self.numero = numero
         self.quantVotos = quantVotos
-        
-    def exibirCandidato(self):
-        return ' {}  |   {}   |  {} '.format(self.nome, self.partido, self.numero)
+        self.imagem = imagem
 
-candidato1 = Candidato('Lula', 'PT', 13, 0)
-candidato2 = Candidato('Renan', 'Missão', 14, 0)
-candidato3 = Candidato('Flávio', 'PL', 22, 0)
-candidato4 = Candidato('Pablo', 'PRTB', 28, 0)
-candidato5 = Candidato('Zema', 'Novo', 30, 0)
-candidatoNulo = Candidato('NULO', 'NENHUM', 00, 0)
+candidato1 = Candidato('Lula', 'PT', '13', 0, 'imagens/lula.png')
+candidato2 = Candidato('Renan', 'Missão', '14', 0, 'imagens/renan.png')
+candidato3 = Candidato('Flávio', 'PL', '22', 0, 'imagens/flavio.png')
+candidato4 = Candidato('Pablo', 'PRTB', '28', 0, 'imagens/pablo.png')
+candidato5 = Candidato('Zema', 'Novo', '30', 0, 'imagens/zema.png')
+candidatoNulo = Candidato('NULO', 'NENHUM', '00', 0, 'imagens/nulo.png')
 
 listaCandidatos = [
                                 candidato1,

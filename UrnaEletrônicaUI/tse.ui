@@ -34,7 +34,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -47,22 +52,33 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>20</y>
-      <width>281</width>
-      <height>41</height>
+      <x>30</x>
+      <y>10</y>
+      <width>401</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Microsoft YaHei</family>
-      <pointsize>20</pointsize>
+      <family>Ebrima</family>
+      <pointsize>27</pointsize>
       <weight>75</weight>
+      <italic>false</italic>
       <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
      </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string>JUSTIÇA ELEITORAL</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="bt3">
@@ -76,7 +92,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -97,7 +118,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -118,7 +144,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -139,7 +170,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -160,7 +196,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -181,7 +222,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -202,7 +248,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -223,7 +274,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -244,7 +300,12 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
      </font>
     </property>
     <property name="cursor">
@@ -263,6 +324,16 @@
       <height>571</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 0, 0);</string>
     </property>
@@ -277,7 +348,12 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <family>Arial Black</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
      <property name="cursor">
@@ -301,7 +377,12 @@
      </property>
      <property name="font">
       <font>
-       <pointsize>17</pointsize>
+       <family>Arial Black</family>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <stylestrategy>PreferAntialias</stylestrategy>
       </font>
      </property>
      <property name="cursor">
@@ -324,16 +405,48 @@
       <height>331</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Arial Black</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">
 background-color: rgb(126, 121, 117);</string>
     </property>
+    <widget class="QLabel" name="imagemCandidato">
+     <property name="geometry">
+      <rect>
+       <x>60</x>
+       <y>20</y>
+       <width>321</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>5</pointsize>
+       <stylestrategy>PreferAntialias</stylestrategy>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
     <widget class="QLabel" name="numeroPrint">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>0</x>
        <y>130</y>
-       <width>221</width>
+       <width>441</width>
        <height>71</height>
       </rect>
      </property>
@@ -341,6 +454,10 @@ background-color: rgb(126, 121, 117);</string>
       <font>
        <pointsize>24</pointsize>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent;
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -358,68 +475,20 @@ background-color: rgb(126, 121, 117);</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="mensagemVoto">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>240</y>
-       <width>361</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>MS Shell Dlg 2</family>
-       <pointsize>10</pointsize>
-       <weight>9</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 0, 0);</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QLabel" name="textoConfirma">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>80</y>
-      <width>241</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>17</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
    </widget>
    <widget class="QPushButton" name="btEncerrar">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>60</x>
       <y>510</y>
-      <width>231</width>
+      <width>331</width>
       <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>17</pointsize>
+      <family>Arial Black</family>
+      <pointsize>27</pointsize>
      </font>
     </property>
     <property name="cursor">
@@ -429,7 +498,39 @@ background-color: rgb(126, 121, 117);</string>
      <string notr="true">border-color: rgb(255, 0, 0);</string>
     </property>
     <property name="text">
-     <string>ENCERRAR ELEIÇÃO</string>
+     <string>APURAR</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mensagemVoto">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>421</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>13</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+      <stylestrategy>PreferAntialias</stylestrategy>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <zorder>widget</zorder>
@@ -444,9 +545,9 @@ background-color: rgb(126, 121, 117);</string>
    <zorder>bt6</zorder>
    <zorder>label</zorder>
    <zorder>widget_2</zorder>
-   <zorder>textoConfirma</zorder>
    <zorder>btEncerrar</zorder>
    <zorder>bt8</zorder>
+   <zorder>mensagemVoto</zorder>
   </widget>
  </widget>
  <resources/>
