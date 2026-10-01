@@ -4,14 +4,12 @@ from playsound3 import playsound
 from PyQt6.QtCore import QTimer
 from PyQt6.QtGui import QPixmap, QIcon
 from candidato import *
-from urna import *
 import sys
 import os
 
-
 class Urna:
 
-    
+    @staticmethod
     def votar(JanelaUrna, lista):
 
         for candidato in lista:
@@ -20,8 +18,10 @@ class Urna:
                 candidato.quantVotos +=1
 
                 urnaSom = playsound('audio/urna_som.mp3', block = False) 
-                JanelaUrna.mensagemVoto.setText('') 
-    
+                JanelaUrna.mensagemVoto.setText('Voto confirmado!') 
+                QTimer.singleShot(1000, lambda:JanelaUrna.numeroPrint.setText('')) 
+                QTimer.singleShot(1200, lambda:JanelaUrna.mensagemVoto.setText('')) 
+                
                 break 
     
         else: 
@@ -51,27 +51,31 @@ class Urna:
                 if vencedor.nome == 'NULO':
                     JanelaUrna.mensagemVoto.setText('VOTAÇÃO ADIADA, O NULO GANHOU')
                     
-
                 else:
-                    JanelaUrna.mensagemVoto.setText('VENCEDOR')
+                    JanelaUrna.mensagemVoto.setText('VENCEDOR(a)')
                 
-                pixmap = QPixmap(vencedor.imagem)
-                JanelaUrna.imagemCandidato.setPixmap(pixmap)
+                imagemVencedor = QPixmap(vencedor.imagem)
+                JanelaUrna.imagemCandidato.setPixmap(imagemVencedor)
 
                 QTimer.singleShot(5000, JanelaUrna.close)
                     
 
             else:
 
-                if candidatoNulo.nome not in (vencedores): vencedores.append(candidatoNulo.nome)
+                if candidatoNulo not in (vencedores): vencedores.append(candidatoNulo)
+                for candidato in listaCandidatos: candidato.quantVotos = 0
+
+                JanelaUrna.listaAtual = vencedores
+                JanelaUrna.turnoAtual +=1
+                JanelaUrna.setWindowTitle(f'Urna - {JanelaUrna.turnoAtual}º turno')
                 
                 JanelaUrna.mensagemVoto.setText('Deu empate!')
-                QTimer.singleShot(2000, lambda: JanelaUrna.mensagemVoto.setText(f'2º turno!'))
-                QTimer.singleShot(1000, lambda: JanelaUrna.mensagemVoto.setText(''))
-
+                QTimer.singleShot(2000, lambda: JanelaUrna.mensagemVoto.setText(f'{JanelaUrna.turnoAtual}º turno!'))
+                QTimer.singleShot(2000, lambda: JanelaUrna.mensagemVoto.setText(''))
                 JanelaUrna.imagemCandidato.clear()
 
-                JanelaUrna.segundo_turno = True
+                global segundo_turno
+                segundo_turno = True
 
                 
 

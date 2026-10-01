@@ -1,14 +1,15 @@
 from urna import * 
 
-
 class JanelaUrna(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
         
         uic.loadUi("tse.ui", self)
-        self.setWindowTitle("Urna")
+        self.setWindowTitle("Urna - Eleições 2026")
         self.setWindowIcon(QIcon("imagens/urnalogo.png"))
+        self.turnoAtual = 1
+        self.listaAtual = listaCandidatos
 
         
         self.bt1.clicked.connect(lambda: self.botaonumero(1))
@@ -24,8 +25,8 @@ class JanelaUrna(QtWidgets.QMainWindow):
         self.btCorrige.clicked.connect(self.botaocorrige)
 
         
-        self.btConfirma.clicked.connect(lambda: self.botaoconfirma(listaCandidatos))
-        self.btEncerrar.clicked.connect(lambda: self.botaoencerrar(listaCandidatos))
+        self.btConfirma.clicked.connect(self.botaoconfirma)
+        self.btEncerrar.clicked.connect(self.botaoencerrar)
         
 
 
@@ -41,14 +42,11 @@ class JanelaUrna(QtWidgets.QMainWindow):
         novoNumero = numeroAtual[:-1]
         self.numeroPrint.setText(f"{novoNumero}")
 
-    def botaoconfirma(self, listadomomento):
-        Urna.votar(self, listadomomento) 
+    def botaoconfirma(self):
+        Urna.votar(self, self.listaAtual) 
 
-    def botaoencerrar(self, listadomomento):
-        Urna.apurar(self, listadomomento)
-
-        global encerramento
-        encerramento = True
+    def botaoencerrar(self):
+        Urna.apurar(self, self.listaAtual)
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
